@@ -7,4 +7,6 @@ func main() {
 	variable()
 	fmt.Println("Module Constant---")
 	constant()
+	fmt.Println("Module Operator And Condition---")
+	operatorAndCondition()
 }
