@@ -9,4 +9,6 @@ func main() {
 	constant()
 	fmt.Println("Module Operator And Condition---")
 	operatorAndCondition()
+	fmt.Println("Module Looping---")
+	looping()
 }
