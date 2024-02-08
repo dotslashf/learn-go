@@ -11,4 +11,6 @@ func main() {
 	operatorAndCondition()
 	fmt.Println("Module Looping---")
 	looping()
+	fmt.Println("Module Array, Slices, Map---")
+	arraySlicesMap()
 }
