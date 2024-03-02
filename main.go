@@ -13,4 +13,6 @@ func main() {
 	looping()
 	fmt.Println("Module Array, Slices, Map---")
 	arraySlicesMap()
+	fmt.Println("Module Function---")
+	function()
 }
