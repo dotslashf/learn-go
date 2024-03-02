@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func arraySlicesMap() {
 	var listOfNames [4]string
@@ -112,5 +114,70 @@ func arraySlicesMap() {
 	fmt.Println(colors, len(colors), cap(colors))
 	fmt.Println(colorsA, len(colorsA), cap(colorsA))
 	fmt.Println(colorsB, len(colorsB), cap(colorsB))
+
+	var monthsAndDate map[string]int
+	monthsAndDate = map[string]int{}
+
+	monthsAndDate["January"] = 31
+	monthsAndDate["February"] = 28
+	monthsAndDate["March"] = 31
+	fmt.Println(monthsAndDate)
+
+	monthsAndDate["February"] = 27
+	fmt.Println(monthsAndDate)
+
+	// how to write map vertical
+	var rgbMap = map[string]int{
+		"red":   255,
+		"green": 0,
+		"blue":  255,
+		"alpha": 128,
+	}
+	// horizontal
+	var rgbMapHorizontal = map[string]int{"red": 0, "green": 255, "blue": 128}
+
+	fmt.Println(rgbMap, rgbMapHorizontal)
+
+	for key, val := range monthsAndDate {
+		fmt.Println(key, "  \t:", val)
+	}
+
+	fmt.Println(len(rgbMap), rgbMap)
+	delete(rgbMap, "blue")
+	fmt.Println(len(rgbMap), rgbMap)
+
+	var value, isExist = rgbMap["alpha"]
+	if isExist {
+		fmt.Printf("value: %d\n", value)
+	} else {
+		fmt.Println("not exist")
+	}
+
+	var persons = []map[string]string{
+		map[string]string{"name": "John", "gender": "Male"},
+		map[string]string{"name": "Jane", "gender": "Female"},
+	}
+	for _, person := range persons {
+		fmt.Println(person["name"], ":", person["gender"])
+	}
+
+	var newestPersons = []map[string]string{
+		{"name": "John Doe", "gender": "Male"},
+		{"name": "Jane Doe", "gender": "Female"},
+	}
+	for _, person := range newestPersons {
+		fmt.Println(person["name"], ":", person["gender"])
+	}
+
+	var weirdObject = []map[string]string{
+		{"fullName": "John Doe", "age": "12"},
+		{"address": "Home", "dob": "4 December 2024"},
+		{"salary": "$120", "job": "Fictional Character"},
+	}
+	for _, object := range weirdObject {
+		for key := range object {
+			fmt.Println(key, ":", object[key])
+		}
+	}
 
 }
